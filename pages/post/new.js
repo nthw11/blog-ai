@@ -25,7 +25,7 @@ export default function NewPost(props) {
         body: JSON.stringify({ topic, keywords }),
       })
       const json = await response.json()
-      console.log(json)
+
       if (json?.postId) {
         router.push(`/post/${json.postId}`)
       }
