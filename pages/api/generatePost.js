@@ -98,9 +98,8 @@ export default withApiAuthRequired(async function handler(req, res) {
   })
 
   const title = titleResponse.data.choices[0]?.message?.content || ''
-  const metaDescription = console.log('POST CONTENT: ', postContentResponse)
-  console.log('TITLE: ', title)
-  console.log('META DESCRIPTION: ', metaDescription)
+  const metaDescription =
+    metaDescriptionResponse.data.choices[0]?.message.content
 
   await db.collection('users').updateOne(
     {
