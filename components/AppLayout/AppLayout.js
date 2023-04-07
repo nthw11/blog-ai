@@ -38,7 +38,7 @@ export const AppLayout = ({
             New post
           </Link>
           <Link href='/token-topup' className='block mt-2 text-center'>
-            <FontAwesomeIcon icon={faCoins} className='text-yellow-500' />
+            <FontAwesomeIcon icon={faCoins} className='text-cyan-500' />
             <span className='pl-1'>{availableTokens} tokens available</span>
           </Link>
         </div>

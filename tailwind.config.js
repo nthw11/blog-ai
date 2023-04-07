@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       fontFamily: {
         body: 'var(--font-dm-sans)',
-        heading: 'var(--font-dm-serif)',
+        // heading: 'var(--font-dm-serif)',
+        heading: 'var(--font-unica-one)',
       },
     },
   },

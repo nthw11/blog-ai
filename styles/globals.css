@@ -49,6 +49,6 @@
 
 @layer components {
   .btn {
-    @apply hover:no-underline bg-green-500 tracking-wider w-full text-center text-white font-bold cursor-pointer uppercase px-4 py-2 rounded-md hover:bg-green-600 transition-colors block disabled:bg-green-200 disabled:cursor-not-allowed;
+    @apply hover:no-underline bg-cyan-800 tracking-wider w-full text-center text-white font-bold cursor-pointer uppercase px-4 py-2 rounded-md hover:bg-cyan-700 transition-colors block disabled:bg-slate-400 disabled:cursor-not-allowed;
   }
 }
