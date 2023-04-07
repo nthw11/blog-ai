@@ -16,11 +16,12 @@ export default function TokenTopup() {
   }
 
   return (
-    <div>
-      <h1>Token topup page</h1>
+    <div className='mx-auto'>
+      <h1>Purchase more tokens</h1>
       <button className='btn' onClick={handleClick}>
         Add tokens
       </button>
+      <h4>Add 10 tokens for $9</h4>
     </div>
   )
 }

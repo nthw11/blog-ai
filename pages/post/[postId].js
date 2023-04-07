@@ -39,16 +39,16 @@ export default function Post(props) {
           SEO Title and meta description
         </div>
         <div className='p-4 my-2 border border-stone-200 rounded-md'>
-          <p>{props.postCreated}</p>
-          <div className='text-blue-600 text-2xl font-bold'>{props.title}</div>
+          {/* <p>{props.postCreated}</p> */}
+          <div className='text-cyan-600 text-2xl font-bold'>{props.title}</div>
           <div className='mt-2'>{props.metaDescription}</div>
         </div>
         <div className='text-sm font-bold mt-6 p-2 bg-stone-200'>Keywords</div>
         <div className='flex flex-wrap pt-2 gap-1'>
           {props.keywords.split(',').map((keyword, idx) => (
-            <div key={idx} className='p-2 rounded-full bg-slate-800 text-white'>
-              <FontAwesomeIcon icon={faHashtag} />
-              {keyword}
+            <div key={idx} className='p-2 rounded-full bg-cyan-800 text-white'>
+              {/* <FontAwesomeIcon icon={faHashtag} /> */}
+              {keyword.trim()}
             </div>
           ))}
         </div>

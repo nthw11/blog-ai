@@ -19,7 +19,7 @@ export default withApiAuthRequired(async function handler(req, res) {
   })
   const openai = new OpenAIApi(config)
 
-  const { topic, keywords } = req.body
+  const { topic, keywords, temperature } = req.body
 
   if (!topic || !keywords) {
     res.status(422).json({ message: 'Missing topic or keywords' })
@@ -33,7 +33,7 @@ export default withApiAuthRequired(async function handler(req, res) {
 
   const postContentResponse = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
-    temperature: 0,
+    temperature: temperature || 0,
     messages: [
       {
         role: 'system',
@@ -42,7 +42,8 @@ export default withApiAuthRequired(async function handler(req, res) {
       {
         role: 'user',
         content: `Write a long and detailed SEO-friendly blog post about ${topic}, that targets the following comma-separated keywords: ${keywords}. 
-  The content should be formatted in SEO-friendly HTML, limited to the following HTML tags: p, h1, h2, h3, h4, h5, h6, strong, li, ol, ul, i.`,
+      The response should be formatted in SEO-friendly HTML, 
+      limited to the following HTML tags: p, h1, h2, h3, h4, h5, h6, strong, i, ul, li, ol.`,
       },
     ],
   })
@@ -50,7 +51,7 @@ export default withApiAuthRequired(async function handler(req, res) {
     postContentResponse.data.choices[0]?.message?.content || ''
   const titleResponse = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
-    temperature: 0,
+    temperature: temperature || 0,
     messages: [
       {
         role: 'system',
@@ -74,7 +75,7 @@ export default withApiAuthRequired(async function handler(req, res) {
   })
   const metaDescriptionResponse = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
-    temperature: 0,
+    temperature: temperature || 0,
     messages: [
       {
         role: 'system',
