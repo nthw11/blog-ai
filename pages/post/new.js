@@ -3,8 +3,6 @@ import { AppLayout } from '../../components/AppLayout'
 import { getAppProps } from '../../utils/getAppProps'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBrain } from '@fortawesome/free-solid-svg-icons'
 import logo_loading from '../../public/logo_loading.svg'
 import Image from 'next/image'
 

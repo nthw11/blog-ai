@@ -22,6 +22,11 @@ export default function TokenTopup() {
         Add tokens
       </button>
       <h4>Add 10 tokens for $9</h4>
+      <h4>PLEASE NOTE</h4>
+      <p>
+        This is a demo app, but the Stripe integration is real. You will be
+        charged $9 for 10 tokens.
+      </p>
     </div>
   )
 }
